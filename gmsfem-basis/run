@@ -1,0 +1,8 @@
+#for vi in {0..35}
+for vi in {0..120}
+do
+    ./msbasis 0 ../data/modelMs/ ../data/modelMs/omega10-fvm/ $vi 80 ../data/modelF/ 0 16 > a
+#    ./msbasis 1 ../data/modelMs/ ../data/modelMs/omega10-fem/ $vi ../data/mesh/mesh-p ../data/modelF/ 0 16 > a
+#    ./msbasis 1 ../data/modelMs/ ../data/modelMs/omega10-fem/ $vi ../data/mesh/mesh-h ../data/modelF/ 0 16 > a
+    echo "generate $vi"
+done

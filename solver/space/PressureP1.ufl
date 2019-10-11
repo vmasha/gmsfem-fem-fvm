@@ -1,0 +1,8 @@
+cell = triangle
+
+P  = FiniteElement("CG", cell, 1)
+u = TrialFunction(P)
+v = TestFunction(P)
+
+a = u*v*dx
+L = v*dx
