@@ -1,7 +1,7 @@
 # gmsfem-fem-fvm
 Implementation of the Generalized Multiscale Finite Element Method (GMsFEM) for solution problems in heterogeneous or/and perforated media based on the system representation (fvm or fem fine grid approximation)
 
-My papers about GMsFEM:
+My papers about multiscale method:
 
 * Chung ET, Efendiev Y, Li G, Vasilyeva M. Generalized multiscale finite element methods for problems in perforated heterogeneous domains [PDF](https://arxiv.org/abs/1501.03536)
 * Vasilyeva M, Chung ET, Efendiev Y, Tyrylgin A. A three-level multi-continua upscaling method for flow problems in fractured porous media [PDF](https://arxiv.org/abs/1810.01581)
