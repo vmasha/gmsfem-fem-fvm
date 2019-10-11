@@ -6,6 +6,9 @@ My papers about multiscale method:
 * Chung ET, Efendiev Y, Li G, Vasilyeva M. Generalized multiscale finite element methods for problems in perforated heterogeneous domains [PDF](https://arxiv.org/abs/1501.03536)
 * Vasilyeva M, Chung ET, Efendiev Y, Tyrylgin A. A three-level multi-continua upscaling method for flow problems in fractured porous media [PDF](https://arxiv.org/abs/1810.01581)
 
+I would be grateful if you add citations to my relevant publications when you use it in your research. 
+
+
 Implementation of the method contains:
 
 * **fine grid system generation** (./systemFEM.py and ./systemFVM.py) - create mass and stiffness matrices and right - hand side vector (create fine grid system)
