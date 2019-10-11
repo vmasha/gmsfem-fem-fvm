@@ -19,38 +19,64 @@ Implementation based on the [FEniCS](https://fenicsproject.org) (geometry object
 ## How to use
 
 Fine grid simulations:
+
 1. run fenics container
   > ```docker run -ti -v $(pwd):/home/fenics/shared quay.io/fenicsproject/stable```
+  
 2. create folders ./data/out/, ./data/modelF/
+
 3. generate fine grid system 
   > ```python systemFEM.py```
-  or 
+  
+  or
+  
   > ```python systemFVM.py```
+  
 4. run fine grid solver in ./solver/
   > ```./solver F 0 20 0.0003 80 6400 ../data/modelF/ ../data/out/ 1 ./ err.txt```
-  or
+
+  or 
+
   > ```./solver F 1 20 0.003 ../data/mesh/mesh-p 6101 ../data/modelF/ ../data/out/ 1 ./ err.txt```
+
   or
+
   > ```./solver F 1 20 0.03 ../data/mesh/mesh-h 6373 ../data/modelF/ ../data/out/ 1 ./ err.txt```
 
+
 Multiscale simulations:
+
 1. create folders ./data/modelMs/omega10fem/, ./data/modelMs/eigen/, ./data/modelMs/dof/
+
 2. local domains generations (coarse grid) in ./local-domain/
   > ```./omegas 2 ../data/omega10/ 10 0.1 0.0 10 0.1 0.0```
+
   or
+  
   > ```./omegas 2 ../data/modelMs/omega10/ 10 0.2 -1.0 10 0.2 -1.0```
+  
 3. multiscale basis generation in ./gmsfem-basis/
   > ``` ./run```
+  
 4. generate R in ./ms-rgen/
   > ```./rgen 1 6400 121 ../data/modelMs/ 16```
+  
   or
+  
   > ```./rgen 1 6101 121 ../data/modelMs/ 16```
+  
   or 
+  
   > ```./rgen 1 6373 121 ../data/modelMs/ 16```
+  
 5. solve multiscale in ./solver/
   > ```./solver C 0 20 0.0003 80 6400 ../data/modelF/ ../data/out/ 1936 ../data/modelMs/R100 err.txt```
+  
   or
+  
   > ```./solver C 1 20 0.003 ../data/mesh/mesh-p 6101 ../data/modelF/ ../data/out/ 1936 ../data/modelMs/R100 err.txt```
+  
   or
+  
   > ```./solver C 1 20 0.03 ../data/mesh/mesh-h 6373 ../data/modelF/ ../data/out/ 1936 ../data/modelMs/R100 err.txt```
   
